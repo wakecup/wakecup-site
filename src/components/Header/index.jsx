@@ -1,24 +1,41 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+// import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-import { Link } from '@components/Link'
-import { Box } from '@components/Grid'
-import { Text } from '@components/Text'
+import { Link } from '@components/Link';
 
-const Header = ({ siteTitle }) => (
-  <Box as="header" bg="primary.800" px={3} py={3} mb={4}>
-    <Box maxWidth="700px" m="0 auto">
-      <Link to="/" css={{ textDecoration: 'none' }}>
-        <Text as="h1" color="white">
-          {siteTitle}
-        </Text>
-      </Link>
-    </Box>
-  </Box>
-)
+// Styled components
+import HeaderComponents from './components';
 
-Header.propTypes = {
-  siteTitle: PropTypes.string.isRequired,
-}
+const Header = () => {
+  const Image = () => (
+    <StaticQuery
+      query={graphql`
+        query {
+          file(relativePath: { eq: "logo.png" }) {
+            childImageSharp {
+              fluid(maxWidth: 254, maxHeight: 80) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
+        }
+      `}
+      render={data => <Img height="80" fluid={data.file.childImageSharp.fluid} />}
+    />
+  );
 
-export default Header
+  return (
+    <HeaderComponents.Header>
+      <HeaderComponents.HeaderContainer>
+        <HeaderComponents.ImageContainer>{Image()}</HeaderComponents.ImageContainer>
+        <HeaderComponents.LinkContainer>
+          <Link to="/">Home</Link>
+        </HeaderComponents.LinkContainer>
+      </HeaderComponents.HeaderContainer>
+    </HeaderComponents.Header>
+  );
+};
+
+export default Header;

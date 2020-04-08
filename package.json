@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-styled",
+  "name": "wakecup-website",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby and styled-system",
   "version": "2.0.0",
@@ -25,8 +25,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "format": "prettier --write \"src/**/*.{jsx,js}\"",
-    "lint:scripts": "eslint './src/**/*.{jsx,js}'",
-    "lint:styles": "stylelint './src/**/*.{jsx,js}'"
+    "lint:scripts": "eslint --ext .js --ext .jsx ./src/",
+    "lint:styles": "stylelint \"src/**/*.jsx\" -s css-in-js --config .stylelintrc"
   },
   "husky": {
     "hooks": {
@@ -57,6 +57,7 @@
     "react-dom": "16.12.0",
     "react-ga": "^2.7.0",
     "react-helmet": "^5.2.1",
+    "react-reveal": "^1.2.2",
     "react-typography": "^0.16.19",
     "styled-components": "^4.4.1",
     "styled-system": "^5.1.5",

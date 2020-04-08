@@ -1,12 +1,6 @@
-import styled, {
-  space,
-  color,
-  layout,
-  border,
-  background,
-  position,
-  propTypes,
-} from '@style'
+/* eslint-disable import/named */
+import styled, { space, color, layout, border, background, position, propTypes } from '@style';
+/* eslint-enable import/named */
 
 const Box = styled.div`
   ${space}
@@ -15,9 +9,9 @@ const Box = styled.div`
   ${border}
   ${background}
   ${position}
-`
+`;
 
-Box.displayName = `Box`
+Box.displayName = `Box`;
 
 Box.propTypes = {
   ...propTypes.space,
@@ -26,6 +20,6 @@ Box.propTypes = {
   ...propTypes.border,
   ...propTypes.background,
   ...propTypes.position,
-}
+};
 
-export default Box
+export default Box;

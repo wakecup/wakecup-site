@@ -1,19 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({
-  title,
-  description,
-  lang,
-  image,
-  pathname,
-  isArticle,
-  articleMeta,
-}) {
+function SEO({ title, description, lang, image, pathname, isArticle, articleMeta }) {
   // eslint-disable-next-line no-use-before-define
-  const { site } = useStaticQuery(query)
+  const { site } = useStaticQuery(query);
 
   const {
     buildTime,
@@ -29,7 +21,7 @@ function SEO({
       author,
       twitter,
     },
-  } = site
+  } = site;
 
   // Use global defaults whenever there's no prop
   const seo = {
@@ -38,7 +30,7 @@ function SEO({
     description: description || defaultDescription,
     image: `${siteUrl}${pathPrefix}${image || defaultImage}`,
     url: `${siteUrl}${pathname || ''}`,
-  }
+  };
 
   // schema.org in JSONLD format
   // https://developers.google.com/search/docs/guides/intro-structured-data
@@ -77,7 +69,7 @@ function SEO({
       '@type': 'ImageObject',
       url: seo.image,
     },
-  }
+  };
 
   // Initial breadcrumb list
   const itemListElement = [
@@ -89,9 +81,9 @@ function SEO({
       },
       position: 1,
     },
-  ]
+  ];
 
-  let schemaArticle = null
+  let schemaArticle = null;
   if (isArticle) {
     schemaArticle = {
       '@context': 'http://schema.org',
@@ -129,7 +121,7 @@ function SEO({
         url: seo.image,
       },
       mainEntityOfPage: seo.url,
-    }
+    };
     // Push current blogpost into breadcrumb list
     itemListElement.push({
       '@type': 'ListItem',
@@ -138,7 +130,7 @@ function SEO({
         name: seo.title,
       },
       position: 2,
-    })
+    });
   }
 
   const breadcrumb = {
@@ -147,17 +139,12 @@ function SEO({
     description: 'Breadcrumbs list',
     name: 'Breadcrumbs',
     itemListElement,
-  }
+  };
 
   return (
-    <Helmet
-      title={title}
-      defaultTitle={seo.title}
-      titleTemplate={titleTemplate}
-    >
+    <Helmet title={title} defaultTitle={seo.title} titleTemplate={titleTemplate}>
       <html lang={seo.lang} />
       <meta name="description" content={seo.description} />
-      <meta name="gatsby-starter" content="Gatsby Starter Styled" />
 
       {/* OpenGraph tags */}
       <meta property="og:url" content={seo.url} />
@@ -176,21 +163,12 @@ function SEO({
           Always insert breadcrumbs, but article schema only if `articleMeta` is passed
       */}
       <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
-      {!isArticle && (
-        <script type="application/ld+json">
-          {JSON.stringify(schemaOrgWebPage)}
-        </script>
+      {!isArticle && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
+      {isArticle && articleMeta && articleMeta.datePublished && articleMeta.dateModified && (
+        <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>
       )}
-      {isArticle &&
-        articleMeta &&
-        articleMeta.datePublished &&
-        articleMeta.dateModified && (
-          <script type="application/ld+json">
-            {JSON.stringify(schemaArticle)}
-          </script>
-        )}
     </Helmet>
-  )
+  );
 }
 
 SEO.propTypes = {
@@ -204,7 +182,7 @@ SEO.propTypes = {
     datePublished: PropTypes.string,
     dateModified: PropTypes.string,
   }),
-}
+};
 
 SEO.defaultProps = {
   lang: `en`,
@@ -214,9 +192,9 @@ SEO.defaultProps = {
   pathname: null,
   isArticle: false,
   articleMeta: null,
-}
+};
 
-export { SEO }
+export { SEO };
 
 const query = graphql`
   query SEO {
@@ -236,4 +214,4 @@ const query = graphql`
       }
     }
   }
-`
+`;

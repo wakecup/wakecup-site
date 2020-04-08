@@ -21,4 +21,4 @@ module.exports = {
     '^@components(.*)$': '<rootDir>/src/components/$1',
     '^@test$': '<rootDir>/src/util/test/',
   },
-}
+};

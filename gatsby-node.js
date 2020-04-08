@@ -3,7 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-const path = require('path')
+const path = require('path');
 
 /**
  * Enable absolute imports with `/src` as root.
@@ -19,5 +19,5 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@test': path.resolve(__dirname, './src/util/test'),
       },
     },
-  })
-}
+  });
+};

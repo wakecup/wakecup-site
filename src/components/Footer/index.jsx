@@ -1,19 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Box } from '@components/Grid'
+// Components
+import FooterComponents from './components';
 
 const Footer = ({ children }) => (
-  <Box as="footer" bg="grey.300" p={3} mb={3}>
-    {children}
-  </Box>
-)
+  <FooterComponents.FooterWrapper>
+    <div>Link 1, link 2, link 3</div>
+    <FooterComponents.Copyright>{children}</FooterComponents.Copyright>
+  </FooterComponents.FooterWrapper>
+);
 
 Footer.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-}
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
+};
 
-export default Footer
+export default Footer;

@@ -1,16 +1,16 @@
 module.exports = {
   pathPrefix: `/`,
   url: `https://gatsby-starter-styled.netlify.com/`,
-  title: `Gatsby Starter Styled`,
-  titleTemplate: `%s — Gatsby Starter Styled`,
-  description: `Kick off your next, great Gatsby project with this starter.`,
+  title: `Wake cup! Digital Marketing`,
+  titleTemplate: `%s — Wake cup! Digital Marketing`,
+  description: `Consultoria de marketing digital e criação de aplicativos e sites.`,
   image: `/images/meta-image-default.png`, // Path to the default meta image in `static` folder
   siteLanguage: `en`, // Language tag on <html> element
 
   // Web App Manifest
   favicon: `src/images/favicon.png`, // Used for manifest favicon generation
-  shortName: `Starter Styled`, // shortname for manifest. *Must* be shorter than 12 characters
-  themeColor: `#253688`,
+  shortName: `Wakecup!`, // shortname for manifest. *Must* be shorter than 12 characters
+  themeColor: `#4b2956`,
   backgroundColor: `#253688`,
 
   // schema.org JSONLD
@@ -19,5 +19,5 @@ module.exports = {
 
   // Google & Twitter
   googleAnalyticsId: `UA-XXXXX`, // Google Analytics ID
-  twitter: `@gregoralbrecht`, // Twitter username
-}
+  twitter: `@bielmaia`, // Twitter username
+};

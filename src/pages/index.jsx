@@ -1,27 +1,46 @@
-import React from 'react'
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-import { Link } from '@components/Link'
-import { Layout } from '@components/Layout'
-import Image from '@components/Image'
-import { SEO } from '@components/SEO'
-import { Text } from '@components/Text'
-import { Box, Br } from '@components/Grid'
+import { Layout } from '@components/Layout';
+import { SEO } from '@components/SEO';
+import Slider from '@components/Slider';
+import IndexComponents from '@components/PageComponents';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO />
-    <Text as="h2" mb={3}>
-      Hi people
-    </Text>
-    <Text mb={4}>
-      Welcome to your new Gatsby site. <Br />
-      Now go build something great.
-    </Text>
-    <Box maxWidth="300px" mb={4}>
-      <Image />
-    </Box>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  const Image = () => (
+    <StaticQuery
+      query={graphql`
+        query {
+          file(relativePath: { eq: "about-us.jpg" }) {
+            childImageSharp {
+              fluid(maxWidth: 420, quality: 80) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
+        }
+      `}
+      render={data => <Img fluid={data.file.childImageSharp.fluid} />}
+    />
+  );
 
-export default IndexPage
+  return (
+    <Layout>
+      <SEO />
+      <Slider />
+      <IndexComponents.SectionIntro>
+        <IndexComponents.SectionAboutUsWrapper>
+          <IndexComponents.SectionTitle>About us</IndexComponents.SectionTitle>
+          <IndexComponents.SectionAboutUsP>
+            Wake Cup! Digital Marketing is the responsible enterprise to integrate your company in
+            digital world to expand your business in a innovative, creative and singular way.
+          </IndexComponents.SectionAboutUsP>
+        </IndexComponents.SectionAboutUsWrapper>
+        <IndexComponents.SectionAboutUsImg>{Image()}</IndexComponents.SectionAboutUsImg>
+      </IndexComponents.SectionIntro>
+    </Layout>
+  );
+};
+
+export default IndexPage;

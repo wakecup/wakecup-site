@@ -38,7 +38,7 @@
     "import/ignore": ["util/style/index.js", "util/test/index.jsx"],
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx"],
+        "extensions": [".js", ".jsx", ".tsx"],
         "paths": ["./src"]
       },
       "alias": {
@@ -47,7 +47,7 @@
           ["@components", "./src/components"],
           ["@test", "./src/util/test"]
         ],
-        "extensions": [".js", ".jsx"]
+        "extensions": [".js", ".jsx", ".tsx"]
       }
     }
   },

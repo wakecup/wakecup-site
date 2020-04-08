@@ -1,4 +1,4 @@
-import { createGlobalStyle } from './index'
+import { createGlobalStyle } from './index';
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -12,6 +12,6 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
-`
+`;
 
-export default GlobalStyles
+export default GlobalStyles;
