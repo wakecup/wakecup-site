@@ -21,6 +21,7 @@ const TextContainer = styled.div`
 
 const H1Slider = styled.h1`
   /* font-family: 'Roboto', sans-serif; */
+  text-transform: uppercase;
   font-weight: 100;
   font-size: 45px;
   line-height: 60px;

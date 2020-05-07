@@ -1,4 +1,4 @@
-import Typography from 'typography'
+import Typography from 'typography';
 
 const typography = new Typography({
   title: 'Default',
@@ -35,6 +35,6 @@ const typography = new Typography({
       marginBottom: 0,
     },
   }),
-})
+});
 
-export default typography
+export default typography;
