@@ -35,8 +35,10 @@ const ImageContainer = styled.div`
 const StyledImage = styled(Img)`
   height: 100%;
 
-  img {
-    height: 575px !important;
+  @media ${devices.mobile} {
+    img {
+      height: 575px !important;
+    }
   }
 `;
 
