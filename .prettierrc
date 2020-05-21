@@ -4,5 +4,6 @@
   "jsxBracketSameLine": false,
   "arrowParens": "avoid",
   "printWidth": 100,
+  "endOfLine": "auto",
   "trailingComma": "es5"
 }

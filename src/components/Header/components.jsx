@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '@style/constants';
 
 const Header = styled.header`
   width: 100%;
@@ -11,6 +12,10 @@ const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media ${devices.mobile} {
+    width: auto;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -23,6 +28,10 @@ const LinkContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   margin: auto 0 auto auto;
+
+  @media ${devices.mobile} {
+    display: none;
+  }
 `;
 
 const HeaderComponents = {

@@ -15,7 +15,7 @@ module.exports = {
 
   // schema.org JSONLD
   headline: `Kick off your next, great Gatsby project with this starter.`,
-  author: ``,
+  author: 'Gabriel Maia Francisco',
 
   // Google & Twitter
   // googleAnalyticsId: `UA-XXXXX`, // Google Analytics ID

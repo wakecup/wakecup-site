@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Img from 'gatsby-image';
+import { devices } from '../../util/style/constants';
 
 const SliderWrapper = styled.div`
   position: relative;
@@ -17,6 +19,25 @@ const TextContainer = styled.div`
   color: #e3e3e3;
   padding-right: 10%;
   padding-left: 20%;
+
+  @media ${devices.mobile} {
+    padding-right: 8%;
+    padding-left: 8%;
+  }
+`;
+
+const ImageContainer = styled.div`
+  @media ${devices.mobile} {
+    height: 575px;
+  }
+`;
+
+const StyledImage = styled(Img)`
+  height: 100%;
+
+  img {
+    height: 575px !important;
+  }
 `;
 
 const H1Slider = styled.h1`
@@ -27,6 +48,11 @@ const H1Slider = styled.h1`
   line-height: 60px;
   letter-spacing: 10px;
   padding-bottom: 45px;
+
+  @media ${devices.mobile} {
+    font-size: 25px;
+    line-height: 30px;
+  }
 `;
 
 const H2Slider = styled.h2`
@@ -35,13 +61,11 @@ const H2Slider = styled.h2`
   font-weight: 300;
   line-height: 40px;
   letter-spacing: 3px;
+
+  @media ${devices.mobile} {
+    font-size: 18px;
+    line-height: 28px;
+  }
 `;
 
-const SliderComponents = {
-  H1Slider,
-  H2Slider,
-  SliderWrapper,
-  TextContainer,
-};
-
-export default SliderComponents;
+export { H1Slider, H2Slider, SliderWrapper, TextContainer, ImageContainer, StyledImage };
