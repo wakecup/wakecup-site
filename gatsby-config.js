@@ -68,6 +68,14 @@ module.exports = {
         icon: website.favicon,
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /.svg$/,
+        },
+      },
+    },
     `gatsby-plugin-offline`,
   ],
 };
