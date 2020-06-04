@@ -61,6 +61,10 @@ const SectionInfoWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+
+  @media ${devices.mobile} {
+    flex-direction: column;
+  }
 `;
 
 const SectionInfoMirroredWrapper = styled.div`
@@ -69,6 +73,10 @@ const SectionInfoMirroredWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-direction: row-reverse;
+
+  @media ${devices.mobile} {
+    flex-direction: column;
+  }
 `;
 
 const UiIconWrapper = styled.div`
