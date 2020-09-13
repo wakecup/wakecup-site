@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const website = require('./config/website');
+const languages = require('./config/languages');
 
 const pathPrefix = website.pathPrefix === `/` ? `` : website.pathPrefix;
 
@@ -15,6 +17,7 @@ module.exports = {
     headline: website.headline,
     author: website.author,
     twitter: website.twitter,
+    languages,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,8 +28,16 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'markdown-pages',
+        path: `${__dirname}/src/pages`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-typescript',
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -35,9 +46,17 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        pathToConfigModule: `./config/typography.js`,
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 800,
+              showCaptions: true,
+            },
+          },
+        ],
       },
     },
     {
@@ -73,6 +92,23 @@ module.exports = {
       options: {
         rule: {
           include: /.svg$/,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyForNull: 'any',
+        langKeyDefault: languages.defaultLangKey,
+        useLangKeyLayout: true,
+        prefixDefault: false,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Roboto'],
         },
       },
     },

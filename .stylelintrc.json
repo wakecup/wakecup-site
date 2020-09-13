@@ -1,0 +1,24 @@
+{
+  "processors": [
+    [
+      "stylelint-processor-styled-components",
+      {
+        "moduleName": "util/style"
+      }
+    ]
+  ],
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-standard",
+    "stylelint-config-styled-components"
+  ],
+  "rules": {
+    "property-no-vendor-prefix": true,
+    "value-keyword-case": [
+      "lower",
+      {
+        "ignoreFunctions": ["getAnimations", "animDelayTemplate"]
+      }
+    ]
+  }
+}

@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const GoogleAnalytics = require('react-ga');
 const website = require('./config/website');
 
