@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
   html,
   body {
     min-height: 100%;
-    min-width: 320px;
+    min-width: 280px;
   }
 
   html {
@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: Roboto, sans-serif;
+    font-family: Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     background-color: ${theme.colors.pageBackground};
     scrollbar-width: thin;

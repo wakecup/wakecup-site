@@ -64,6 +64,7 @@
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-remark": "^2.8.34",
     "gatsby-transformer-sharp": "^2.3.17",
+    "polished": "^3.6.6",
     "ptz-i18n": "^1.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",

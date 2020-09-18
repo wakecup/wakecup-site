@@ -27,6 +27,7 @@ const colors = {
   pageBackground: '#F0F0F0',
   white: '#fff',
   black: '#000',
+  textImage: '#CFDCCF',
   primary: {
     color: '#5A335D',
     text: '#481e4b',

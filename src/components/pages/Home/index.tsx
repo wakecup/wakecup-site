@@ -2,7 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import { HomeWrapper } from './styles';
+import { HomeWrapper, SectionContent } from './styles';
 import LayoutWrapper from '../../layoutWrapper';
 import { SEO } from '../../SEO';
 import Slider from '../../slider';
@@ -12,6 +12,12 @@ import SocialMediaPresenceIcon from '../../../images/social-media-presence.svg';
 import SocialMediaIcon from '../../../images/social-media-mkt.svg';
 import UuxIcon from '../../../images/uux.svg';
 import StrategyAnalysisIcon from '../../../images/strategy-analysis.svg';
+import SocialMediaPhoto from '../../../images/social-media.jpg';
+import WebsiteDevelopmentPhoto from '../../../images/website-development.jpg';
+import DigitalMarketingPhoto from '../../../images/digital-marketing.jpg';
+import SeoContentPhoto from '../../../images/seo-content.jpg';
+import EmailMarketingPhoto from '../../../images/email-marketing.jpg';
+import PublicRelationsPhoto from '../../../images/public-relations.jpg';
 
 interface IndexProps {
   i18n: {
@@ -57,18 +63,18 @@ const IndexPage = ({ i18n }: IndexProps): React.ReactElement => {
 
   const renderSectionInfo = (
     title: string,
-    className: string,
-    icon: JSX.Element,
     description: string,
-    isMirror = false
+    isMirror = false,
+    image: JSX.Element | null = null
   ) => (
-    <div>
-      <h4>{title}</h4>
-      <div className={isMirror ? 'infoMirroredWrapper' : 'infoWrapper'}>
-        <div className={className}>{icon}</div>
+    <SectionContent isOdd={isMirror}>
+      {image}
+      <div className="infoWrapper">
+        <h4>{title}</h4>
+        {/* <div className={className}>{icon}</div> */}
         <p>{description}</p>
       </div>
-    </div>
+    </SectionContent>
   );
 
   return (
@@ -76,7 +82,7 @@ const IndexPage = ({ i18n }: IndexProps): React.ReactElement => {
       <SEO />
       <Slider title={i18n.sliderTitle} subtitle={i18n.sliderSubTitle} />
       <HomeWrapper>
-        <section className="section">
+        <div className="section">
           <div className="sectionIntro">
             <div className="aboutUsWrapper">
               <h3 className="sectionTitle">{i18n.dna}</h3>
@@ -86,49 +92,63 @@ const IndexPage = ({ i18n }: IndexProps): React.ReactElement => {
             </div>
             <div className="imgAboutUs">{Image()}</div>
           </div>
-        </section>
-        <section className="section">
-          <h3 className="sectionTitle">{i18n.services}</h3>
+        </div>
+        <div>
           {renderSectionInfo(
             i18n.serviceTitle1,
-            'digitalMktIcon',
-            <SocialMediaIcon />,
-            i18n.serviceDescription1
+            i18n.serviceDescription1,
+            false,
+            <img
+              src={SocialMediaPhoto}
+              alt="Social media - https://pixabay.com/illustrations/social-media-scrabble-social-5217024/"
+            />
           )}
           {renderSectionInfo(
             i18n.serviceTitle2,
-            'uiIcon',
-            <UuxIcon />,
             i18n.serviceDescription2,
-            true
+            true,
+            <img
+              src={WebsiteDevelopmentPhoto}
+              alt="Website development - https://pixabay.com/photos/code-html-digital-coding-web-1076533/"
+            />
           )}
           {renderSectionInfo(
             i18n.serviceTitle3,
-            'socialMediaIcon',
-            <SocialMediaPresenceIcon />,
-            i18n.serviceDescription3
+            i18n.serviceDescription3,
+            false,
+            <img
+              src={DigitalMarketingPhoto}
+              alt="Digital Marketing - https://pixabay.com/photos/digital-marketing-technology-1433427/"
+            />
           )}
           {renderSectionInfo(
             i18n.serviceTitle4,
-            'strategyIcon',
-            <StrategyAnalysisIcon />,
             i18n.serviceDescription4,
-            true
+            true,
+            <img
+              src={SeoContentPhoto}
+              alt="SEO - https://pixabay.com/photos/internet-search-engine-laptop-1519471/"
+            />
           )}
           {renderSectionInfo(
             i18n.serviceTitle5,
-            'socialMediaIcon',
-            <SocialMediaPresenceIcon />,
-            i18n.serviceDescription5
+            i18n.serviceDescription5,
+            false,
+            <img
+              src={EmailMarketingPhoto}
+              alt="Email marketing - https://unsplash.com/photos/EvX8-J2ClMo"
+            />
           )}
           {renderSectionInfo(
             i18n.serviceTitle6,
-            'strategyIcon',
-            <StrategyAnalysisIcon />,
             i18n.serviceDescription6,
-            true
+            true,
+            <img
+              src={PublicRelationsPhoto}
+              alt="Public Relations - https://pixabay.com/photos/microphone-active-talk-conference-704255/"
+            />
           )}
-        </section>
+        </div>
       </HomeWrapper>
     </LayoutWrapper>
   );

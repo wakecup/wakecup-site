@@ -2,7 +2,7 @@ declare module 'react-reveal/Fade';
 declare module 'ptz-i18n';
 
 declare module '*.jpg' {
-  const content: React.FunctionComponent<React.ImgHTMLAttributes<ImageBitmap>>;
+  const content: string;
   export default content;
 }
 

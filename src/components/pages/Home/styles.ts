@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { devices } from '@style/constants';
 import { theme } from '@style';
+import { transparentize } from 'polished';
 
 // Helpers
 import {
@@ -12,6 +13,111 @@ import {
   rotate,
 } from '../../../helpers/keyframes';
 import { getAnimations } from '../../../helpers/styled-comp';
+
+interface SectionProps {
+  isOdd: boolean;
+}
+
+/* stylelint-disable value-keyword-case */
+/* stylelint-disable declaration-colon-newline-after */
+export const SectionContent = styled.section<SectionProps>`
+  position: relative;
+  margin-bottom: -4px;
+  color: ${theme.colors.textImage};
+
+  @media ${devices.mobile} {
+    max-width: 100vw;
+  }
+
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: ${props =>
+      props.isOdd
+        ? transparentize(0.1, theme.colors.primary.light)
+        : transparentize(0.1, theme.colors.terciary.light)};
+  }
+
+  img {
+    width: 100%;
+
+    @media ${devices.mobile} {
+      min-height: 300px;
+      object-fit: cover;
+    }
+  }
+
+  h4 {
+    font-size: 3rem;
+    min-width: 370px;
+    ${props =>
+      props.isOdd
+        ? css`
+            margin-right: 100px;
+          `
+        : css`
+            margin-left: 100px;
+            text-align: end;
+          `}
+
+    @media ${devices.mobile} {
+      font-size: 1rem;
+      min-width: auto;
+      margin: 0;
+    }
+  }
+
+  p {
+    font-size: 2rem;
+    text-align: justify;
+    ${props =>
+      props.isOdd
+        ? css`
+            margin-left: 100px;
+            padding-right: 50px;
+            margin-right: 50px;
+            border-right: 1px solid ${theme.colors.pageBackground};
+          `
+        : css`
+            margin-right: 100px;
+            padding-left: 50px;
+            margin-left: 50px;
+            border-left: 1px solid ${theme.colors.pageBackground};
+          `}
+
+    @media ${devices.mobile} {
+      margin: 0;
+      padding: 10px 20px;
+      font-size: 0.8rem;
+      border: 0;
+      line-height: 1.5;
+    }
+  }
+
+  .infoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ${props =>
+      props.isOdd
+        ? css`
+            flex-direction: row-reverse;
+          `
+        : css`
+            flex-direction: row;
+          `}
+
+    @media ${devices.mobile} {
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+  }
+`;
+/* stylelint-enable value-keyword-case */
+/* stylelint-enable declaration-colon-newline-after */
 
 export const HomeWrapper = styled.div`
   .section {
@@ -28,12 +134,20 @@ export const HomeWrapper = styled.div`
     h3 {
       font-size: 2rem;
       color: ${theme.colors.primary.color};
+
+      @media ${devices.mobile} {
+        font-size: 1.2rem;
+      }
     }
 
     h4 {
       font-size: 1.8rem;
       color: ${theme.colors.primary.color};
       margin: 0.5rem 0;
+
+      @media ${devices.mobile} {
+        font-size: 1rem;
+      }
     }
 
     p {
@@ -41,6 +155,10 @@ export const HomeWrapper = styled.div`
       color: ${theme.colors.primary.text};
       text-align: justify;
       line-height: 1.5rem;
+
+      @media ${devices.mobile} {
+        font-size: 0.9rem;
+      }
     }
   }
 
@@ -83,46 +201,6 @@ export const HomeWrapper = styled.div`
 
     @media ${devices.mobile} {
       text-align: justify;
-    }
-  }
-
-  .infoWrapper {
-    display: flex;
-    margin-bottom: 50px;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-
-    @media ${devices.mobile} {
-      flex-direction: column;
-    }
-
-    p {
-      margin-left: 30px;
-
-      @media ${devices.mobile} {
-        margin-left: 0;
-      }
-    }
-  }
-
-  .infoMirroredWrapper {
-    display: flex;
-    margin-bottom: 50px;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-
-    @media ${devices.mobile} {
-      flex-direction: column;
-    }
-
-    p {
-      margin-right: 30px;
-
-      @media ${devices.mobile} {
-        margin-right: 0;
-      }
     }
   }
 

@@ -33,7 +33,7 @@ const Header = ({ langs, currentLang }: Props): JSX.Element => {
         }
       `}
       render={data => (
-        <div style={{ height: 80 }}>
+        <div>
           <Img fluid={data.file.childImageSharp.fluid} />
         </div>
       )}
