@@ -2,16 +2,14 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import { HomeWrapper, SectionContent } from './styles';
 import LayoutWrapper from '../../layoutWrapper';
 import { SEO } from '../../SEO';
 import Slider from '../../slider';
+import SectionPicture from '../../sectionPicture';
 
-// Icons
-import SocialMediaPresenceIcon from '../../../images/social-media-presence.svg';
-import SocialMediaIcon from '../../../images/social-media-mkt.svg';
-import UuxIcon from '../../../images/uux.svg';
-import StrategyAnalysisIcon from '../../../images/strategy-analysis.svg';
+import { HomeWrapper } from './styles';
+
+// Images
 import SocialMediaPhoto from '../../../images/social-media.jpg';
 import WebsiteDevelopmentPhoto from '../../../images/website-development.jpg';
 import DigitalMarketingPhoto from '../../../images/digital-marketing.jpg';
@@ -61,22 +59,6 @@ const IndexPage = ({ i18n }: IndexProps): React.ReactElement => {
     />
   );
 
-  const renderSectionInfo = (
-    title: string,
-    description: string,
-    isMirror = false,
-    image: JSX.Element | null = null
-  ) => (
-    <SectionContent isOdd={isMirror}>
-      {image}
-      <div className="infoWrapper">
-        <h4>{title}</h4>
-        {/* <div className={className}>{icon}</div> */}
-        <p>{description}</p>
-      </div>
-    </SectionContent>
-  );
-
   return (
     <LayoutWrapper>
       <SEO />
@@ -94,60 +76,69 @@ const IndexPage = ({ i18n }: IndexProps): React.ReactElement => {
           </div>
         </div>
         <div>
-          {renderSectionInfo(
-            i18n.serviceTitle1,
-            i18n.serviceDescription1,
-            false,
-            <img
-              src={SocialMediaPhoto}
-              alt="Social media - https://pixabay.com/illustrations/social-media-scrabble-social-5217024/"
-            />
-          )}
-          {renderSectionInfo(
-            i18n.serviceTitle2,
-            i18n.serviceDescription2,
-            true,
-            <img
-              src={WebsiteDevelopmentPhoto}
-              alt="Website development - https://pixabay.com/photos/code-html-digital-coding-web-1076533/"
-            />
-          )}
-          {renderSectionInfo(
-            i18n.serviceTitle3,
-            i18n.serviceDescription3,
-            false,
-            <img
-              src={DigitalMarketingPhoto}
-              alt="Digital Marketing - https://pixabay.com/photos/digital-marketing-technology-1433427/"
-            />
-          )}
-          {renderSectionInfo(
-            i18n.serviceTitle4,
-            i18n.serviceDescription4,
-            true,
-            <img
-              src={SeoContentPhoto}
-              alt="SEO - https://pixabay.com/photos/internet-search-engine-laptop-1519471/"
-            />
-          )}
-          {renderSectionInfo(
-            i18n.serviceTitle5,
-            i18n.serviceDescription5,
-            false,
-            <img
-              src={EmailMarketingPhoto}
-              alt="Email marketing - https://unsplash.com/photos/EvX8-J2ClMo"
-            />
-          )}
-          {renderSectionInfo(
-            i18n.serviceTitle6,
-            i18n.serviceDescription6,
-            true,
-            <img
-              src={PublicRelationsPhoto}
-              alt="Public Relations - https://pixabay.com/photos/microphone-active-talk-conference-704255/"
-            />
-          )}
+          <SectionPicture
+            image={
+              <img
+                src={SocialMediaPhoto}
+                alt="Social media - https://pixabay.com/illustrations/social-media-scrabble-social-5217024/"
+              />
+            }
+            title={i18n.serviceTitle1}
+            description={i18n.serviceDescription1}
+          />
+          <SectionPicture
+            image={
+              <img
+                src={WebsiteDevelopmentPhoto}
+                alt="Website development - https://pixabay.com/photos/code-html-digital-coding-web-1076533/"
+              />
+            }
+            title={i18n.serviceTitle2}
+            description={i18n.serviceDescription2}
+            isMirror
+          />
+          <SectionPicture
+            image={
+              <img
+                src={DigitalMarketingPhoto}
+                alt="Digital Marketing - https://pixabay.com/photos/digital-marketing-technology-1433427/"
+              />
+            }
+            title={i18n.serviceTitle3}
+            description={i18n.serviceDescription3}
+          />
+          <SectionPicture
+            image={
+              <img
+                src={SeoContentPhoto}
+                alt="SEO - https://pixabay.com/photos/internet-search-engine-laptop-1519471/"
+              />
+            }
+            title={i18n.serviceTitle4}
+            description={i18n.serviceDescription4}
+            isMirror
+          />
+          <SectionPicture
+            image={
+              <img
+                src={EmailMarketingPhoto}
+                alt="Email marketing - https://unsplash.com/photos/EvX8-J2ClMo"
+              />
+            }
+            title={i18n.serviceTitle5}
+            description={i18n.serviceDescription5}
+          />
+          <SectionPicture
+            image={
+              <img
+                src={PublicRelationsPhoto}
+                alt="Public Relations - https://pixabay.com/photos/microphone-active-talk-conference-704255/"
+              />
+            }
+            title={i18n.serviceTitle6}
+            description={i18n.serviceDescription6}
+            isMirror
+          />
         </div>
       </HomeWrapper>
     </LayoutWrapper>
