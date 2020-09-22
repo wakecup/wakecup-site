@@ -3,12 +3,14 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { InternalLink } from '../link';
+import MobileHeader from '../mobileHeader';
+import Flag from '../flag';
 
 // Styled components
 import { HeaderContainer } from './styles';
 
 type GetLangItem = {
-  langKey: string;
+  langKey: 'en' | 'pt';
   selected: boolean;
   link: string;
 };
@@ -48,21 +50,31 @@ const Header = ({ langs, currentLang }: Props): JSX.Element => {
         to={lang.link}
         className="language"
       >
-        <li>{lang.langKey}</li>
+        <Flag type={lang.langKey} active={lang.selected} />
       </InternalLink>
     ));
 
     return <ul className="languageWrapper">{links}</ul>;
   };
 
+  const currentPath = window.location.pathname;
+
   return (
     <HeaderContainer>
       <div className="container">
         <div className="imageContainer">{Image()}</div>
         <div className="linkContainer">
-          <InternalLink to={currentLang === 'en' ? '/' : `/${currentLang}`}>Home</InternalLink>
+          <div className="internalLinkContainer">
+            <InternalLink
+              to={currentLang === 'en' ? '/' : `/${currentLang}`}
+              partiallyActive={currentPath === '/pt/'}
+            >
+              Home
+            </InternalLink>
+          </div>
+          {selectLanguage()}
         </div>
-        {selectLanguage()}
+        <MobileHeader currentLang={currentLang} languages={selectLanguage()} />
       </div>
     </HeaderContainer>
   );

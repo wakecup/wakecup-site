@@ -139,14 +139,7 @@ export const SectionContent = styled.section<SectionProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    ${props =>
-      props.isOdd
-        ? css`
-            flex-direction: row-reverse;
-          `
-        : css`
-            flex-direction: row;
-          `}
+    flex-direction: ${props => (props.isOdd ? 'row-reverse' : 'row')};
 
     @media ${devices.mobile} {
       flex-direction: column;

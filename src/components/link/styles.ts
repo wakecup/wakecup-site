@@ -4,7 +4,7 @@ import { theme } from '@style';
 export const LinkWrapper = styled.div`
   .link {
     text-decoration: none;
-    padding-right: 30px;
+    padding-right: 15px;
   }
 
   .activeLink {
