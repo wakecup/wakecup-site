@@ -10,7 +10,7 @@ const About: React.FC = () => (
     <AboutContainer>
       <h1>About us</h1>
 
-      <Contact />
+      <Contact place="about" />
     </AboutContainer>
   </LayoutWrapper>
 );

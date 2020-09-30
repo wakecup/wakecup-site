@@ -141,7 +141,7 @@ const IndexPage = ({ i18n }: IndexProps): React.ReactElement => {
           />
         </div>
       </HomeWrapper>
-      <Contact />
+      <Contact place="home" />
     </LayoutWrapper>
   );
 };
