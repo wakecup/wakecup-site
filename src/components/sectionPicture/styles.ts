@@ -13,23 +13,10 @@ interface SectionProps {
 /* stylelint-disable declaration-colon-newline-after */
 export const SectionContent = styled.section<SectionProps>`
   position: relative;
-  margin-bottom: -4px;
   color: ${theme.colors.textImage};
 
   @media ${devices.mobile} {
     max-width: 100vw;
-  }
-
-  div {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: ${props =>
-      props.isOdd
-        ? transparentize(0.1, theme.colors.primary.light)
-        : transparentize(0.1, theme.colors.terciary.light)};
   }
 
   img {
@@ -136,6 +123,15 @@ export const SectionContent = styled.section<SectionProps>`
   }
 
   .infoWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: ${props =>
+      props.isOdd
+        ? transparentize(0.1, theme.colors.primary.light)
+        : transparentize(0.1, theme.colors.terciary.light)};
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -145,5 +141,9 @@ export const SectionContent = styled.section<SectionProps>`
       flex-direction: column;
       justify-content: space-evenly;
     }
+  }
+
+  & + section {
+    margin-top: -4px;
   }
 `;

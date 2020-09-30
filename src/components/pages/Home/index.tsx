@@ -6,10 +6,10 @@ import LayoutWrapper from '../../layoutWrapper';
 import { SEO } from '../../SEO';
 import Slider from '../../slider';
 import SectionPicture from '../../sectionPicture';
+import Contact from '../../contact';
 
+// Assets
 import { HomeWrapper } from './styles';
-
-// Images
 import SocialMediaPhoto from '../../../images/social-media.jpg';
 import WebsiteDevelopmentPhoto from '../../../images/website-development.jpg';
 import DigitalMarketingPhoto from '../../../images/digital-marketing.jpg';
@@ -141,6 +141,7 @@ const IndexPage = ({ i18n }: IndexProps): React.ReactElement => {
           />
         </div>
       </HomeWrapper>
+      <Contact />
     </LayoutWrapper>
   );
 };

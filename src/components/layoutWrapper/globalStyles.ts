@@ -40,6 +40,11 @@ const GlobalStyles = createGlobalStyle`
     border: 1px solid #8b86a3;
   }
 
+  input,
+  textarea {
+    font-family: Helvetica, sans-serif;
+  }
+
   button {
     cursor: pointer;
   }

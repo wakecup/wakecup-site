@@ -71,6 +71,12 @@ const Header = ({ langs, currentLang }: Props): JSX.Element => {
             >
               Home
             </InternalLink>
+            <InternalLink
+              to={currentLang === 'en' ? '/about' : `/${currentLang}/about`}
+              partiallyActive={currentPath === '/pt/'}
+            >
+              About us
+            </InternalLink>
           </div>
           {selectLanguage()}
         </div>
