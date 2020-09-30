@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import root from 'window-or-global';
 
 import { InternalLink } from '../link';
 
@@ -12,8 +13,11 @@ interface Props {
 
 const MobileHeader = ({ currentLang, languages }: Props): JSX.Element => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [currentPath, setcurrentPath] = useState('/');
 
-  const currentPath = window.location.pathname;
+  useEffect(() => {
+    setcurrentPath(root.location.pathname);
+  }, []);
 
   return (
     <>

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import root from 'window-or-global';
 
 import { InternalLink } from '../link';
 import MobileHeader from '../mobileHeader';
@@ -21,6 +22,8 @@ interface Props {
 }
 
 const Header = ({ langs, currentLang }: Props): JSX.Element => {
+  const [currentPath, setcurrentPath] = useState('/');
+
   const Image = () => (
     <StaticQuery
       query={graphql`
@@ -57,8 +60,9 @@ const Header = ({ langs, currentLang }: Props): JSX.Element => {
     return <ul className="languageWrapper">{links}</ul>;
   };
 
-  let currentPath;
-  if (typeof window !== 'undefined') currentPath = window.location.pathname;
+  useEffect(() => {
+    setcurrentPath(root.location.pathname);
+  }, []);
 
   return (
     <HeaderContainer>
