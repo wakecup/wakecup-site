@@ -57,7 +57,8 @@ const Header = ({ langs, currentLang }: Props): JSX.Element => {
     return <ul className="languageWrapper">{links}</ul>;
   };
 
-  const currentPath = window.location.pathname;
+  let currentPath;
+  if (typeof window !== 'undefined') currentPath = window.location.pathname;
 
   return (
     <HeaderContainer>
