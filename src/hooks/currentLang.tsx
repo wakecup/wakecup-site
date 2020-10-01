@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import { getCurrentLangKey } from 'ptz-i18n';
-import root from 'window-or-global';
+import { useLocation } from '@reach/router';
 
 const LanguageQuery = graphql`
   query LanguageQuery {
@@ -18,7 +18,7 @@ const LanguageQuery = graphql`
 const useCurrentLangKey = (): 'pt' | 'en' => {
   const { site } = useStaticQuery(LanguageQuery);
   const { defaultLangKey, langs } = site.siteMetadata.languages;
-  const { pathname } = root.location;
+  const { pathname } = useLocation();
 
   const langKey = getCurrentLangKey(langs, defaultLangKey, pathname);
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider } from 'react-intl';
-import root from 'window-or-global';
+import { useLocation } from '@reach/router';
 
 // Hooks
 import useCurrentLangKey from '../../hooks/currentLang';
@@ -34,7 +34,7 @@ export const LayoutQuery = graphql`
 
 const LayoutWrapper: React.FC = ({ children }) => {
   const { site } = useStaticQuery(LayoutQuery);
-  const { pathname } = root.location;
+  const { pathname } = useLocation();
   const { langs, defaultLangKey } = site.siteMetadata.languages;
 
   const langKey = useCurrentLangKey();
