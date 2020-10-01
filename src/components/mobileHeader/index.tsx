@@ -4,16 +4,22 @@ import root from 'window-or-global';
 
 import { InternalLink } from '../link';
 
+// Hooks
+import useCurrentLangKey from '../../hooks/currentLang';
+
+// Assets
+import { titles } from '../../util/constants/dictionary';
 import { MobileWrapper } from './style';
 
 interface Props {
-  currentLang: 'en' | 'pt';
   languages: JSX.Element;
 }
 
-const MobileHeader = ({ currentLang, languages }: Props): JSX.Element => {
+const MobileHeader = ({ languages }: Props): JSX.Element => {
   const [openMenu, setOpenMenu] = useState(false);
   const [currentPath, setcurrentPath] = useState('/');
+
+  const currentLang = useCurrentLangKey();
 
   useEffect(() => {
     setcurrentPath(root.location.pathname);
@@ -24,10 +30,10 @@ const MobileHeader = ({ currentLang, languages }: Props): JSX.Element => {
       <Helmet>
         <style type="text/css">
           {`
-          body {
-            overflow: ${openMenu ? 'hidden' : 'auto'};
-          }
-        `}
+            body {
+              overflow: ${openMenu ? 'hidden' : 'auto'};
+            }
+          `}
         </style>
       </Helmet>
       <MobileWrapper>
@@ -44,7 +50,15 @@ const MobileHeader = ({ currentLang, languages }: Props): JSX.Element => {
                 to={currentLang === 'en' ? '/' : `/${currentLang}`}
                 partiallyActive={currentPath === '/pt/'}
               >
-                Home
+                {titles[currentLang].home}
+              </InternalLink>
+            </li>
+            <li className="menu-item">
+              <InternalLink
+                to={currentLang === 'en' ? '/about' : `/${currentLang}/about`}
+                partiallyActive={new RegExp(/about$/).test(currentPath)}
+              >
+                {titles[currentLang].about}
               </InternalLink>
             </li>
             <li className="menu-item">{languages}</li>

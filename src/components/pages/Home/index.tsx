@@ -10,12 +10,12 @@ import Contact from '../../contact';
 
 // Assets
 import { HomeWrapper } from './styles';
-import SocialMediaPhoto from '../../../images/social-media.jpg';
-import WebsiteDevelopmentPhoto from '../../../images/website-development.jpg';
-import DigitalMarketingPhoto from '../../../images/digital-marketing.jpg';
-import SeoContentPhoto from '../../../images/seo-content.jpg';
-import EmailMarketingPhoto from '../../../images/email-marketing.jpg';
-import PublicRelationsPhoto from '../../../images/public-relations.jpg';
+import SocialMediaPhoto from '../../../assets/images/social-media.jpg';
+import WebsiteDevelopmentPhoto from '../../../assets/images/website-development.jpg';
+import DigitalMarketingPhoto from '../../../assets/images/digital-marketing.jpg';
+import SeoContentPhoto from '../../../assets/images/seo-content.jpg';
+import EmailMarketingPhoto from '../../../assets/images/email-marketing.jpg';
+import PublicRelationsPhoto from '../../../assets/images/public-relations.jpg';
 
 interface IndexProps {
   i18n: {

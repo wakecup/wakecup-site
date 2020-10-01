@@ -6,10 +6,10 @@ import AmandaPic from '../assets/images/amandamachado.jpeg';
 import GabrielPic from '../assets/images/gabrielmaia.jpeg';
 
 const i18n = {
-  title: 'About us',
-  ourdna: 'Our DNA',
-  proposal: 'More proposal.\nLess promises.',
-  ourMission: 'Our mission',
+  title: 'Sobre nós',
+  ourdna: 'Nosso DNA',
+  proposal: 'Mais propostas.\nMenos promessas.',
+  ourMission: 'Nossa missão',
   missionText:
     'Founded since 2017, our mission has been to engage and connect brands to the right partners in order to deliver a customized and engineered approach to growing businesses that combines marketing strategy, social media, communications & PR and software development.',
   missionText2:

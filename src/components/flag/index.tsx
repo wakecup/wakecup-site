@@ -2,8 +2,8 @@ import React from 'react';
 
 import { FlagLi } from './styles';
 
-import BrazilFlag from '../../images/brazil.png';
-import UKFlag from '../../images/united.png';
+import BrazilFlag from '../../assets/images/brazil.png';
+import UKFlag from '../../assets/images/united.png';
 
 interface Props {
   type: 'pt' | 'en';

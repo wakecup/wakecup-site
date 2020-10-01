@@ -8,7 +8,7 @@ module.exports = {
   siteLanguage: `en`, // Language tag on <html> element
 
   // Web App Manifest
-  favicon: `src/images/favicon.png`, // Used for manifest favicon generation
+  favicon: `src/assets/images/favicon.png`, // Used for manifest favicon generation
   shortName: `Wakecup!`, // shortname for manifest. *Must* be shorter than 12 characters
   themeColor: `#4b2956`,
   backgroundColor: `#fff`,

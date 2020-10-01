@@ -1,8 +1,11 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { useLocation } from '@reach/router';
-import { getCurrentLangKey, getLangs, getUrlForLang } from 'ptz-i18n';
+import { getLangs, getUrlForLang } from 'ptz-i18n';
 import { IntlProvider } from 'react-intl';
+import root from 'window-or-global';
+
+// Hooks
+import useCurrentLangKey from '../../hooks/currentLang';
 
 // Styles
 import GlobalStyles from './globalStyles';
@@ -31,10 +34,10 @@ export const LayoutQuery = graphql`
 
 const LayoutWrapper: React.FC = ({ children }) => {
   const { site } = useStaticQuery(LayoutQuery);
-  const { pathname } = useLocation();
+  const { pathname } = root.location;
   const { langs, defaultLangKey } = site.siteMetadata.languages;
 
-  const langKey = getCurrentLangKey(langs, defaultLangKey, pathname);
+  const langKey = useCurrentLangKey();
   const homeLink = `/${langKey}/`.replace(`/${defaultLangKey}/`, '/');
   const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, pathname)).map(
     (item: GetLangItem) => ({

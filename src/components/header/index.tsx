@@ -7,8 +7,9 @@ import { InternalLink } from '../link';
 import MobileHeader from '../mobileHeader';
 import Flag from '../flag';
 
-// Styled components
+// Assets
 import { HeaderContainer } from './styles';
+import { titles } from '../../util/constants/dictionary';
 
 type GetLangItem = {
   langKey: 'en' | 'pt';
@@ -74,18 +75,18 @@ const Header = ({ langs, currentLang }: Props): JSX.Element => {
               to={currentLang === 'en' ? '/' : `/${currentLang}`}
               partiallyActive={currentPath === '/pt/'}
             >
-              Home
+              {titles[currentLang].home}
             </InternalLink>
             <InternalLink
               to={currentLang === 'en' ? '/about' : `/${currentLang}/about`}
-              partiallyActive={currentPath === '/pt/'}
+              partiallyActive={new RegExp(/about/).test(currentPath)}
             >
-              About us
+              {titles[currentLang].about}
             </InternalLink>
           </div>
           {selectLanguage()}
         </div>
-        <MobileHeader currentLang={currentLang} languages={selectLanguage()} />
+        <MobileHeader languages={selectLanguage()} />
       </div>
     </HeaderContainer>
   );
