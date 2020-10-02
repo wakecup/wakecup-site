@@ -39,6 +39,30 @@ const i18n = {
       linkedin: 'https://www.linkedin.com/in/gabrielmaiaf',
     },
   ],
+  values: [
+    {
+      key: 'brotherly',
+      title: 'Brotherly',
+      description:
+        'Team - working with proposal.\nRaising together.\nWe are proud to respect the work life integration.',
+    },
+    {
+      key: 'proposal',
+      title: 'Proposal',
+      description: 'Clients - not just our clients,\nour team.\nWe`re our clients biggests fans.',
+    },
+    {
+      key: 'passion',
+      title: 'Passion',
+      description: 'Results - data obsessed\nand results driven.',
+    },
+    {
+      key: 'innovation',
+      title: 'Innovation',
+      description:
+        'Always learning and teaching\nnobody knows everything.\nWe can help each other.',
+    },
+  ],
 };
 
 export default (): ReactElement => <About i18n={i18n} />;

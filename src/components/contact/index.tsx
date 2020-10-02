@@ -60,7 +60,7 @@ const Contact: React.FC<Props> = ({ place }) => {
         <Input name="email" placeholder="E-mail" />
         <Input name="company" placeholder="Company Name" />
         <Input name="site" placeholder="Site URL" />
-        <Textarea name="message" placeholder="Message" />
+        <Textarea name="message" placeholder="Message" rows={5} />
 
         <button type="submit">Submit</button>
       </Form>

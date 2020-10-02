@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     -webkit-font-smoothing: antialiased;
     background-color: ${theme.colors.pageBackground};
     scrollbar-width: thin;

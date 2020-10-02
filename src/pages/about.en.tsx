@@ -8,7 +8,7 @@ import GabrielPic from '../assets/images/gabrielmaia.jpeg';
 const i18n = {
   title: 'About us',
   ourdna: 'Our DNA',
-  proposal: 'More proposal.\nLess promises.',
+  proposal: 'More purpose.\nLess promises.',
   ourMission: 'Our mission',
   missionText:
     'Founded since 2017, our mission has been to engage and connect brands to the right partners in order to deliver a customized and engineered approach to growing businesses that combines marketing strategy, social media, communications & PR and software development.',
@@ -37,6 +37,30 @@ const i18n = {
         'Gabriel is a passionate and self-taught front-end developer skilled in React and React Native, using Redux, Gatsby, SASS, Expo, Node, TypeScript and Python.\n\nHis pursuit of challenges has always pushed him forward to learn something new, even if he had taught himself. This helped him to dare even more building and breaking things, sharpening his skills day by day.',
       picture: GabrielPic,
       linkedin: 'https://www.linkedin.com/in/gabrielmaiaf',
+    },
+  ],
+  values: [
+    {
+      key: 'brotherly',
+      title: 'Brotherly',
+      description:
+        'Team - working with purpose.\nRaising together.\nWe are proud to respect the work life integration.',
+    },
+    {
+      key: 'purpose',
+      title: 'Purpose',
+      description: "Clients - not just our clients,\nour team.\nWe're our clients biggests fans.",
+    },
+    {
+      key: 'passion',
+      title: 'Passion',
+      description: 'Results - data obsessed\nand results driven.',
+    },
+    {
+      key: 'innovation',
+      title: 'Innovation',
+      description:
+        'Always learning and teaching\nNobody knows everything.\nWe can help each other.',
     },
   ],
 };

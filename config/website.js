@@ -14,7 +14,7 @@ module.exports = {
   backgroundColor: `#fff`,
 
   // schema.org JSONLD
-  headline: `Kick off your next, great Gatsby project with this starter.`,
+  headline: 'A digital marketing TEAM which can take your business to the next level.',
   author: 'Gabriel Maia Francisco',
 
   // Google & Twitter

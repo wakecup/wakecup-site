@@ -14,6 +14,10 @@ export const SectionContainer = styled.section`
   text-align: center;
   margin: 40px auto;
 
+  @media ${devices.mobile} {
+    margin: 40px 8px;
+  }
+
   h1 {
     text-transform: uppercase;
     margin: 32px 0;
@@ -63,4 +67,26 @@ export const SectionContainer = styled.section`
   }
 `;
 
-export const ValuesContainer = styled.section``;
+export const ValuesContainer = styled.section`
+  background: ${theme.colors.primary.color};
+  color: ${theme.colors.pageBackground};
+  padding-bottom: 16px;
+
+  h2 {
+    font-size: 3rem;
+    line-height: 4rem;
+    padding: 42px 0 32px;
+  }
+
+  span {
+    max-width: 960px;
+    margin: 8px auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    @media ${devices.mobile} {
+      margin: 8px;
+    }
+  }
+`;

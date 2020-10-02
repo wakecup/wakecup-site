@@ -1,11 +1,12 @@
 import React from 'react';
 
+import Value from '../../value';
 import Contact from '../../contact';
 import LayoutWrapper from '../../layoutWrapper';
 import { SEO } from '../../SEO';
 import TeamMember from '../../teamMember';
 
-import { AboutContainer, SectionContainer } from './styles';
+import { AboutContainer, SectionContainer, ValuesContainer } from './styles';
 
 interface TeamProps {
   key: string;
@@ -15,6 +16,12 @@ interface TeamProps {
   about: string;
   picture: string;
   linkedin?: string;
+}
+
+interface ValueProps {
+  key: string;
+  title: string;
+  description: string;
 }
 
 interface Props {
@@ -27,6 +34,7 @@ interface Props {
     missionText2: string;
     coreTeam: string;
     team: TeamProps[];
+    values: ValueProps[];
   };
 }
 
@@ -60,24 +68,19 @@ const About: React.FC<Props> = ({ i18n }) => (
         ))}
       </SectionContainer>
 
-      {/* <ValuesContainer>
+      <ValuesContainer>
         <h2>Our core values</h2>
-        <strong>Brotherly</strong>
-        <p>
-          TEAM - WORKING WITH PROPOSAL. RAISING TOGETHER. WE ARE PROUD TO RESPECT THE WORK LIFE
-          INTEGRATION.
-        </p>
-        <strong>Brotherly</strong>
-        <p>
-          TEAM - WORKING WITH PROPOSAL. RAISING TOGETHER. WE ARE PROUD TO RESPECT THE WORK LIFE
-          INTEGRATION.
-        </p>
-        <strong>Brotherly</strong>
-        <p>
-          TEAM - WORKING WITH PROPOSAL. RAISING TOGETHER. WE ARE PROUD TO RESPECT THE WORK LIFE
-          INTEGRATION.
-        </p>
-      </ValuesContainer> */}
+        <span>
+          {i18n.values.map(value => (
+            <Value
+              key={value.key}
+              icon={value.key as 'brotherly' | 'proposal' | 'passion' | 'innovation'}
+              title={value.title}
+              description={value.description}
+            />
+          ))}
+        </span>
+      </ValuesContainer>
 
       <Contact place="about" />
     </AboutContainer>
