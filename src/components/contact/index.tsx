@@ -16,9 +16,33 @@ interface ContactProps {
 
 interface Props {
   place: string;
+  lang: 'pt' | 'en';
 }
 
-const Contact: React.FC<Props> = ({ place }) => {
+const texts = {
+  en: {
+    title: 'Curious to level up your business? Just drop a message!',
+    titleField: 'Title',
+    name: 'Name',
+    email: 'E-mail',
+    company: 'Company Name',
+    url: 'Site URL',
+    message: 'Message',
+    button: 'Submit',
+  },
+  pt: {
+    title: 'Curioso de levar seu negócio para o próximo nível? Mande uma mensagem!',
+    titleField: 'Título',
+    name: 'Nome',
+    email: 'E-mail',
+    company: 'Nome da empresa',
+    url: 'Site',
+    message: 'Mensagem',
+    button: 'Enviar',
+  },
+};
+
+const Contact: React.FC<Props> = ({ place, lang }) => {
   const encode = (data: Record<string, string>) => {
     return Object.keys(data)
       .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
@@ -48,21 +72,21 @@ const Contact: React.FC<Props> = ({ place }) => {
 
   return (
     <ContactContainer>
-      <strong>Curious to level up your business? Just drop a message!</strong>
+      <strong>{texts[lang].title}</strong>
       <Form
         onSubmit={handleSubmit}
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         name={`contact-${place}`}
       >
-        <Input name="bot-field" placeholder="Title" isBotField type="hidden" />
-        <Input name="nome" placeholder="Name" />
-        <Input name="email" placeholder="E-mail" />
-        <Input name="company" placeholder="Company Name" />
-        <Input name="site" placeholder="Site URL" />
-        <Textarea name="message" placeholder="Message" rows={5} />
+        <Input name="bot-field" placeholder={texts[lang].titleField} isBotField type="hidden" />
+        <Input name="nome" placeholder={texts[lang].name} />
+        <Input name="email" placeholder={texts[lang].email} />
+        <Input name="company" placeholder={texts[lang].company} />
+        <Input name="site" placeholder={texts[lang].url} />
+        <Textarea name="message" placeholder={texts[lang].message} rows={5} />
 
-        <button type="submit">Submit</button>
+        <button type="submit">{texts[lang].button}</button>
       </Form>
     </ContactContainer>
   );

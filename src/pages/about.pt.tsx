@@ -5,25 +5,26 @@ import About from '../components/pages/About';
 import AmandaPic from '../assets/images/amandamachado.jpeg';
 import GabrielPic from '../assets/images/gabrielmaia.jpeg';
 
-const i18n = {
+const i18n: i18nAboutProps = {
+  lang: 'pt',
   title: 'Sobre nós',
   ourdna: 'Nosso DNA',
-  proposal: 'Mais propostas.\nMenos promessas.',
+  proposal: 'Mais propósito.\nMenos promessas.',
   ourMission: 'Nossa missão',
   missionText:
-    'Founded since 2017, our mission has been to engage and connect brands to the right partners in order to deliver a customized and engineered approach to growing businesses that combines marketing strategy, social media, communications & PR and software development.',
+    'Fundada desde 2017, nossa missão é conectar marcas aos parceiros CERTOS a fim de fornecer uma abordagem customizada e projetada, combinando estratégia de marketing, gestão de mídias sociais, desenvolvimento de software, comunicação e relações públicas.',
   missionText2:
-    'From awareness to traffic generation to prospect education and finally closing the deal; our engagements are end-to-end solutions for growing businesses.',
-  coreTeam: 'Our core team',
+    'Nosso compromisso é oferecer soluções de ponta a ponta para negócios que buscam crescimento.',
+  coreTeam: 'Nosso time',
   team: [
     {
       key: 'amanda',
       name: 'Amanda Machado',
       title: 'Co-founder & CEO',
       quote:
-        "Everyday I take almost 10 hours of my day thinking about Digital Marketing and it isn't any sacrifice, I love what I do.",
+        'Todos os dias passo quase 10 horas do meu dia pensando em Marketing Digital e não é nenhum sacrifício, eu amo o que faço',
       about:
-        'Amanda is a T-shaped digital marketing and communications specialist with 10 years’ experience.\n\nGuided  by an extremely communicative and creative vein and a can-do attitude, she’s a social Media Expert and is constantly willing to find new ways to help people and brands to prosper in their business.',
+        'Amanda é especialista em comunicação e marketing com 10 anos de experiência. Com passagens em multinacionais do setor editorial, de tecnologia e petrolífero, uniu sua paixão pelo marketing digital à sua sólida experiência no mercado e criou a WakeCup Digital Marketing com o objetivo de alavancar pequenos e médios negócios no mundo digital.\n\nOrientada por uma veia comunicativa e criativa, possui cases e o título de Expert na gestão mídias sociais e comunicação.',
       picture: AmandaPic,
       linkedin: 'https://www.linkedin.com/in/amandamachadomaia',
     },
@@ -32,9 +33,9 @@ const i18n = {
       name: 'Gabriel Maia',
       title: 'Co-founder & CTO',
       quote:
-        'When I figured out that to be a developer I should constantly keep learning, I realised I was just on the right way.',
+        'Quando descobri que para ser um desenvolvedor deveria aprender constantemente, percebi que estava no caminho certo.',
       about:
-        'Gabriel is a passionate and self-taught front-end developer skilled in React and React Native, using Redux, Gatsby, SASS, Expo, Node, TypeScript and Python.\n\nHis pursuit of challenges has always pushed him forward to learn something new, even if he had taught himself. This helped him to dare even more building and breaking things, sharpening his skills day by day.',
+        'Gabriel é um desenvolvedor autodidata com habilidades em React e React Native, usando Redux, Gatsby, SASS, Expo, Node, TypeScript e Python.\n\nSua busca por desafios sempre o impulsionou a aprender algo novo, o que contribuiu positivamente para o seu crescimento profissional na área de TI.\nTem em seu portfólio o desenvolvimento e a criação de sites e de aplicativos para grandes marcas do setor de eventos e de streaming.',
       picture: GabrielPic,
       linkedin: 'https://www.linkedin.com/in/gabrielmaiaf',
     },
@@ -42,25 +43,27 @@ const i18n = {
   values: [
     {
       key: 'brotherly',
-      title: 'Brotherly',
+      title: 'Irmandade',
       description:
-        'Team - working with proposal.\nRaising together.\nWe are proud to respect the work life integration.',
+        'Somos um time - trabalhando com propósito.\nCrescendo juntos.\nTemos orgulho de respoeitar a integração da vida ao trabalho.',
     },
     {
       key: 'proposal',
-      title: 'Proposal',
-      description: 'Clients - not just our clients,\nour team.\nWe`re our clients biggests fans.',
+      title: 'Objetivo',
+      description:
+        'Clientes - não são apenas clientes,\nsão parte da nossa equipe.\nSomos seus maiores fãs.',
     },
     {
       key: 'passion',
-      title: 'Passion',
-      description: 'Results - data obsessed\nand results driven.',
+      title: 'Paixão',
+      description:
+        'Por resultados - proporcionar crescimento\npor meio do nosso trabalho.\nDesenvolver ações que agreguem valor.\nGerar bons negócios aos nossos clientes.',
     },
     {
       key: 'innovation',
-      title: 'Innovation',
+      title: 'Inovação',
       description:
-        'Always learning and teaching\nnobody knows everything.\nWe can help each other.',
+        'Sempre aprendendo e ensinando\nninguém sabe tudo.\nPodemos ajudar uns aos outros.',
     },
   ],
 };

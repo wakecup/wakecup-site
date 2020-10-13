@@ -12,4 +12,8 @@ export const FooterWrapper = styled.footer`
     font-size: 12px;
     padding-top: 20px;
   }
+
+  span {
+    display: inline-flex;
+  }
 `;

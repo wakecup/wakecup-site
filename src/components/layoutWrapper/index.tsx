@@ -51,7 +51,7 @@ const LayoutWrapper: React.FC = ({ children }) => {
       <GlobalStyles />
       <Header langs={langsMenu} currentLang={langKey} />
       {children}
-      <Footer>2020 Wake Cup! Digital Marketing. All rights reserved.</Footer>
+      <Footer currentLang={langKey}>2020 Wake Cup! Digital Marketing. All rights reserved.</Footer>
     </IntlProvider>
   );
 };

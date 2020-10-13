@@ -2,28 +2,30 @@ import React, { ReactElement } from 'react';
 
 import Home from '../components/pages/Home';
 
-const i18n = {
-  sliderTitle: 'Envolva sua marca com um mundo conectado',
-  sliderSubTitle: 'Um TIME de marketing digital que pode levar seu negócio para o próximo nível.',
+const i18n: i18nProps = {
+  lang: 'pt',
+  sliderTitle: 'Envolva sua marca no mundo digital',
+  sliderSubTitle:
+    'Uma equipe especialista em Marketing Digital, Comunicação e Desenvolvimento com o compromisso de fazer o seu negócio alcançar um novo patamar.',
   dna: 'Nosso DNA',
   dnaDescription: 'MAIS PROPÓSITO. MENOS PROMESSAS',
   mission: 'Nossa missão',
-  missionDescription: `Fundado em 2018, nossa missão tem sido envolver e conectar marcas aos parceiros certos para entregar uma aproximação customizada e engenhosa para negócios em crescimento que combina estratégia de marketing, mídias sociais, comunicações, PR e desenvolvimento de software.`,
+  missionDescription: `Fundada desde 2017, nossa missão é conectar marcas aos parceiros CERTOS a fim de fornecer uma abordagem customizada e projetada, combinando estratégia de marketing, gestão de mídias sociais, desenvolvimento de software, comunicação e relações públicas.`,
   services: 'Serviços',
-  serviceTitle1: 'Expert Social Media Marketing',
-  serviceDescription1: `There are nearly three billion social media users worldwide.  We give you access to these potential customers through top-notch social media marketing services. With our help, you can reach out, engage, motivate, and sway the masses to become your clients.\nAt WakeCup, we inspire people to become your brand ambassadors. As a result, this helps promote and recommend your products through powerful social media marketing campaigns. We customize each campaign, ensuring you reach your intended audience.`,
-  serviceTitle2: 'Website Design and Development',
+  serviceTitle1: 'Marketing especializado em mídia social',
+  serviceDescription1: `Existem quase três bilhões de usuários de mídia social em todo o mundo. Oferecemos acesso a esses clientes em potencial por meio de serviços de marketing de mídia social de primeira linha. Com nossa ajuda, você pode alcançar, envolver, motivar e influenciar as massas para que se tornem seus clientes.
+  Na WakeCup, inspiramos as pessoas a se tornarem os embaixadores de sua marca. Como resultado, isso ajuda a promover e recomendar seus produtos por meio de poderosas campanhas de marketing de mídia social. Nós personalizamos cada campanha, garantindo que você alcance seu público-alvo.`,
+  serviceTitle2: 'Design e desenvolvimento de sites',
   serviceDescription2:
-    'Meeting the expectations of today’s complex, hyper-connected digital natives is essential to your success. We prototype high converting Websites, Web Apps, Interfaces, and Digital products by designing elegant UI UX and building award-winning web properties that solve business and growth challenges. Our process involves more than just pretty pixels, instead we design intuitive digital interfaces based on human behavior. We bring complex Websites, e-Commerce, and Apps to life in HTML, CSS, and Javascript. And we’re experts in building large-scale ADA compliant websites in WordPress and all of our sites are fully responsive.',
-  serviceTitle3: 'Digital Marketing',
-  serviceDescription3: `GUESS WHAT? CUSTOMERS ARE EAGER FOR YOUR HELP \n \nBUILD TARGETED CAMPAIGNS THAT RESONATE WITH CUSTOMERS\n\nSearching is only part of the equation. A brands’ work isn’t finished once they show up in search results. The power of search is in the click. It’s critical that brands direct people to a destination that’s useful.`,
-  serviceTitle4: 'SEO and Content Marketing',
-  serviceDescription4: `Our Search Engine Optimization (SEO) campaigns stay current with the latest search engine algorithms and are tailored to your business needs.  As a result, we help you improve rankings and drive traffic you can convert, which directly translates into growth.\nPractical and affordable, our SEO services give you the highest Return on Investment (ROI).`,
-  serviceTitle5: 'Database and Email Marketing',
-  serviceDescription5: `With gorgeous design and content that engages, our emails get a response.\nStay in touch with existing customers or attract new prospects with our compelling email marketing campaigns.  Whether you need real-time updates on real-time metrics and conversion tracking or just an email campaign that drives your business.`,
+    'Atender às expectativas dos nativos digitais complexos e hiperconectados de hoje é essencial para o seu sucesso. Prototipamos sites, aplicativos da Web, interfaces e produtos digitais de alta conversão, projetando UI e UX elegante e construindo propriedades da web premiadas que resolvem os desafios de negócios e crescimento. Nosso processo envolve mais do que apenas pixels bonitos, em vez disso, projetamos interfaces digitais intuitivas com base no comportamento humano. Damos vida a sites complexos, e-commerce e aplicativos em HTML, CSS e Javascript.',
+  serviceTitle3: 'Marketing digital',
+  serviceDescription3: `ADIVINHE, OS CLIENTES ESTÃO ANSIOSOS PARA TE CONHECER\nCRIE CAMPANHAS ESPECÍFICAS QUE ENGAJAM COM SUA AUDIÊNCIA\nPesquisar é apenas parte da equação. O trabalho de uma marca não termina quando aparecem nos resultados da pesquisa. O poder da pesquisa está no clique. É fundamental que as marcas direcionem as pessoas para um destino que seja útil. Podemos ajudar sua marca a:\n- Ser reconhecida (Branding);\n- Promover engajamento de qualidade e converter clientes.\nE TAMBÉM te ajudamos a identificar:\n- Quem são seus clientes;\n- O que eles estão procurando;\n- Que perguntas eles têm;\n- O que eles esperam de você e da sua marca`,
+  serviceTitle4: 'SEO e marketing de conteúdo',
+  serviceDescription4: `Nossas campanhas de Search Engine Optimization (SEO) se mantêm atualizadas com os algoritmos de mecanismo de pesquisa mais recentes e são adaptadas às suas necessidades de negócios. Como resultado, ajudamos você a melhorar as classificações e direcionar o tráfego que você pode converter, o que se traduz diretamente em crescimento.\nPráticos e acessíveis, nossos serviços de SEO oferecem o maior retorno sobre o investimento (ROI).`,
+  serviceTitle5: 'Banco de dados e marketing por email',
+  serviceDescription5: `Com um design lindo e conteúdo envolvente, nossos e-mails recebem uma resposta.\nFique em contato com os clientes existentes ou atraia novos clientes em potencial com nossas atraentes campanhas de marketing por e-mail. Se você precisa de atualizações em tempo real sobre métricas em tempo real e rastreamento de conversão ou apenas uma campanha de e-mail que impulsiona seus negócios.`,
   serviceTitle6: 'PR',
-  serviceDescription6: `IGNITE YOUR BRAND\n\nDOES YOUR COMPANY NEED BUZZ? WE CAN GET YOU EXPOSURE FAST!\n\nOur team has the skills to efficiently communicate with the public, both through compelling digital and traditional public relations tactics. Our relationships with media, online influencers and bloggers drive visibility to you by featuring your brand on large social media sites, blogs and local and national publications, keeping you in the spotlight.
-  `,
+  serviceDescription6: `PROMOVA A SUA MARCA\n\nSUA EMPRESA PRECISA DE BUZZ? PODEMOS OBTER SUA EXPOSIÇÃO RÁPIDA!\n\nNossa equipe tem as habilidades para se comunicar de forma eficiente com o público, tanto por meio de táticas digitais atraentes quanto de relações públicas tradicionais. Relacionamento com a mídia, influenciadores online e blogueiros aumentam a visibilidade para você ao apresentar sua marca em grandes sites de mídia social, blogs e publicações locais e nacionais, mantendo você no centro das atenções.`,
 };
 
 export default (): ReactElement => <Home i18n={i18n} />;

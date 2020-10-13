@@ -8,34 +8,8 @@ import TeamMember from '../../teamMember';
 
 import { AboutContainer, SectionContainer, ValuesContainer } from './styles';
 
-interface TeamProps {
-  key: string;
-  name: string;
-  title: string;
-  quote: string;
-  about: string;
-  picture: string;
-  linkedin?: string;
-}
-
-interface ValueProps {
-  key: string;
-  title: string;
-  description: string;
-}
-
 interface Props {
-  i18n: {
-    title: string;
-    ourdna: string;
-    proposal: string;
-    ourMission: string;
-    missionText: string;
-    missionText2: string;
-    coreTeam: string;
-    team: TeamProps[];
-    values: ValueProps[];
-  };
+  i18n: i18nAboutProps;
 }
 
 const About: React.FC<Props> = ({ i18n }) => (
@@ -74,7 +48,7 @@ const About: React.FC<Props> = ({ i18n }) => (
           {i18n.values.map(value => (
             <Value
               key={value.key}
-              icon={value.key as 'brotherly' | 'proposal' | 'passion' | 'innovation'}
+              icon={value.key as 'brotherly' | 'purpose' | 'passion' | 'innovation'}
               title={value.title}
               description={value.description}
             />
@@ -82,7 +56,7 @@ const About: React.FC<Props> = ({ i18n }) => (
         </span>
       </ValuesContainer>
 
-      <Contact place="about" />
+      <Contact place="about" lang={i18n.lang} />
     </AboutContainer>
   </LayoutWrapper>
 );

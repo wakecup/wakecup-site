@@ -137,6 +137,10 @@ export const SectionContent = styled.section<SectionProps>`
     justify-content: space-between;
     flex-direction: ${props => (props.isOdd ? 'row-reverse' : 'row')};
 
+    p {
+      white-space: break-spaces;
+    }
+
     @media ${devices.mobile} {
       flex-direction: column;
       justify-content: space-evenly;

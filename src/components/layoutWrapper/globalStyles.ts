@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     background-color: ${theme.colors.pageBackground};
     scrollbar-width: thin;
-    scrollbar-color: ${theme.colors.primary.gradient2} #8b86a3;
+    scrollbar-color: ${theme.colors.primary.gradient2} ${theme.colors.pageBackground};
   }
 
   body::-webkit-scrollbar {
@@ -31,13 +31,13 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body::-webkit-scrollbar-track {
-    background: #8b86a3;
+    background: ${theme.colors.pageBackground};
   }
 
   body::-webkit-scrollbar-thumb {
     background-color: ${theme.colors.primary.gradient2};
     border-radius: 6px;
-    border: 1px solid #8b86a3;
+    border: 1px solid ${theme.colors.pageBackground};
   }
 
   input,

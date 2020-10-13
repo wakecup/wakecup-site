@@ -17,28 +17,12 @@ import SeoContentPhoto from '../../../assets/images/seo-content.jpg';
 import EmailMarketingPhoto from '../../../assets/images/email-marketing.jpg';
 import PublicRelationsPhoto from '../../../assets/images/public-relations.jpg';
 
+interface i18nProps extends Record<string, string> {
+  lang: 'pt' | 'en';
+}
+
 interface IndexProps {
-  i18n: {
-    dna: string;
-    dnaDescription: string;
-    mission: string;
-    missionDescription: string;
-    sliderTitle: string;
-    sliderSubTitle: string;
-    services: string;
-    serviceTitle1: string;
-    serviceDescription1: string;
-    serviceTitle2: string;
-    serviceDescription2: string;
-    serviceTitle3: string;
-    serviceDescription3: string;
-    serviceTitle4: string;
-    serviceDescription4: string;
-    serviceTitle5: string;
-    serviceDescription5: string;
-    serviceTitle6: string;
-    serviceDescription6: string;
-  };
+  i18n: i18nProps;
 }
 
 const IndexPage = ({ i18n }: IndexProps): React.ReactElement => {
@@ -141,7 +125,7 @@ const IndexPage = ({ i18n }: IndexProps): React.ReactElement => {
           />
         </div>
       </HomeWrapper>
-      <Contact place="home" />
+      <Contact place="home" lang={i18n.lang} />
     </LayoutWrapper>
   );
 };

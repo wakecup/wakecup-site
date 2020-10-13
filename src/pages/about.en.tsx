@@ -5,7 +5,8 @@ import About from '../components/pages/About';
 import AmandaPic from '../assets/images/amandamachado.jpeg';
 import GabrielPic from '../assets/images/gabrielmaia.jpeg';
 
-const i18n = {
+const i18n: i18nAboutProps = {
+  lang: 'en',
   title: 'About us',
   ourdna: 'Our DNA',
   proposal: 'More purpose.\nLess promises.',

@@ -2,7 +2,8 @@ import React, { ReactElement } from 'react';
 
 import Home from '../components/pages/Home';
 
-const i18n = {
+const i18n: i18nProps = {
+  lang: 'en',
   sliderTitle: 'Engage your brand with a connected world',
   sliderSubTitle: 'A digital marketing TEAM which can take your business to the next level.',
   dna: 'Our DNA',
@@ -22,8 +23,7 @@ const i18n = {
   serviceTitle5: 'Database and Email Marketing',
   serviceDescription5: `With gorgeous design and content that engages, our emails get a response.\nStay in touch with existing customers or attract new prospects with our compelling email marketing campaigns.  Whether you need real-time updates on real-time metrics and conversion tracking or just an email campaign that drives your business.`,
   serviceTitle6: 'PR',
-  serviceDescription6: `IGNITE YOUR BRAND\n\nDOES YOUR COMPANY NEED BUZZ? WE CAN GET YOU EXPOSURE FAST!\n\nOur team has the skills to efficiently communicate with the public, both through compelling digital and traditional public relations tactics. Our relationships with media, online influencers and bloggers drive visibility to you by featuring your brand on large social media sites, blogs and local and national publications, keeping you in the spotlight.
-  `,
+  serviceDescription6: `IGNITE YOUR BRAND\n\nDOES YOUR COMPANY NEED BUZZ? WE CAN GET YOU EXPOSURE FAST!\n\nOur team has the skills to efficiently communicate with the public, both through compelling digital and traditional public relations tactics. Our relationships with media, online influencers and bloggers drive visibility to you by featuring your brand on large social media sites, blogs and local and national publications, keeping you in the spotlight.`,
 };
 
 export default (): ReactElement => <Home i18n={i18n} />;
