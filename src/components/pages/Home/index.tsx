@@ -1,6 +1,6 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+// import { StaticQuery, graphql } from 'gatsby';
+// import Img from 'gatsby-image';
 
 import LayoutWrapper from '../../layoutWrapper';
 import { SEO } from '../../SEO';
@@ -26,22 +26,22 @@ interface IndexProps {
 }
 
 const IndexPage = ({ i18n }: IndexProps): React.ReactElement => {
-  const Image = () => (
-    <StaticQuery
-      query={graphql`
-        query {
-          file(relativePath: { eq: "about-us.jpg" }) {
-            childImageSharp {
-              fluid(maxWidth: 420, quality: 80) {
-                ...GatsbyImageSharpFluid_tracedSVG
-              }
-            }
-          }
-        }
-      `}
-      render={data => <Img fluid={data.file.childImageSharp.fluid} />}
-    />
-  );
+  // const Image = () => (
+  //   <StaticQuery
+  //     query={graphql`
+  //       query {
+  //         file(relativePath: { eq: "about-us.jpg" }) {
+  //           childImageSharp {
+  //             fluid(maxWidth: 420, quality: 80) {
+  //               ...GatsbyImageSharpFluid_tracedSVG
+  //             }
+  //           }
+  //         }
+  //       }
+  //     `}
+  //     render={data => <Img fluid={data.file.childImageSharp.fluid} />}
+  //   />
+  // );
 
   return (
     <LayoutWrapper>
@@ -56,7 +56,7 @@ const IndexPage = ({ i18n }: IndexProps): React.ReactElement => {
               <h3 className="sectionTitle">{i18n.mission}</h3>
               <p className="paragraph">{i18n.missionDescription}</p>
             </div>
-            <div className="imgAboutUs">{Image()}</div>
+            {/* <div className="imgAboutUs">{Image()}</div> */}
           </div>
         </div>
         <div>

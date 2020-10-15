@@ -166,6 +166,7 @@ function SEO({
     <Helmet title={title} defaultTitle={seo.title} titleTemplate={titleTemplate}>
       <html lang={seo.lang} />
       <meta name="description" content={seo.description} />
+      <meta name="google-site-verification" content="Ytl_4MqJcgEAjAJsU5QeGYn3jxWxXRrD856P03FpIyo" />
 
       {/* OpenGraph tags */}
       <meta property="og:url" content={seo.url} />

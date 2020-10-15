@@ -18,6 +18,6 @@ module.exports = {
   author: 'Gabriel Maia Francisco',
 
   // Google & Twitter
-  // googleAnalyticsId: `UA-XXXXX`, // Google Analytics ID
+  googleAnalyticsId: `UA-180689554-1`, // Google Analytics ID
   twitter: `@bielmaia`, // Twitter username
 };

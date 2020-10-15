@@ -26,7 +26,7 @@ export const HomeWrapper = styled.div`
     }
 
     h3 {
-      font-size: 2rem;
+      font-size: 3rem;
       color: ${theme.colors.primary.color};
 
       @media ${devices.mobile} {
@@ -45,10 +45,9 @@ export const HomeWrapper = styled.div`
     }
 
     p {
-      font-size: 1.15rem;
+      font-size: 2rem;
       color: ${theme.colors.primary.text};
-      text-align: justify;
-      line-height: 1.5rem;
+      text-align: center;
 
       @media ${devices.mobile} {
         font-size: 0.9rem;
@@ -78,8 +77,8 @@ export const HomeWrapper = styled.div`
   .aboutUsWrapper {
     display: flex;
     flex-direction: column;
-    max-width: 675px;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
   }
 
   .imgAboutUs {

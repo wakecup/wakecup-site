@@ -11,7 +11,12 @@ export const ContactContainer = styled.div`
   flex-direction: column;
   padding: 40px 0;
   text-align: center;
-  background: url(${LogoWakeCup}) 300% 10% fixed no-repeat white;
+  background: url(${LogoWakeCup}) 30vw 3vw fixed no-repeat white;
+
+  @media ${devices.middleDesktop} {
+    background-position-x: 14vw;
+    background-position-y: 0;
+  }
 
   @media ${devices.mobile} {
     background-position-x: 46%;
