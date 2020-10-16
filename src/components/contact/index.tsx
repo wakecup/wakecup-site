@@ -31,7 +31,7 @@ const texts = {
     button: 'Submit',
   },
   pt: {
-    title: 'Curioso de levar seu negócio para o próximo nível? Mande uma mensagem!',
+    title: 'Quer elevar seu negócio para o próximo nível? Mande uma mensagem!',
     titleField: 'Título',
     name: 'Nome',
     email: 'E-mail',
