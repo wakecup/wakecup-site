@@ -53,6 +53,7 @@ const Header = ({ langs, currentLang }: Props): JSX.Element => {
         partiallyActive={lang.selected}
         to={lang.link}
         className="language"
+        from="header"
       >
         <Flag type={lang.langKey} active={lang.selected} />
       </InternalLink>
@@ -74,12 +75,14 @@ const Header = ({ langs, currentLang }: Props): JSX.Element => {
             <InternalLink
               to={currentLang === 'en' ? '/' : `/${currentLang}`}
               partiallyActive={currentPath === '/pt/'}
+              from="header"
             >
               {titles[currentLang].home}
             </InternalLink>
             <InternalLink
               to={currentLang === 'en' ? '/about' : `/${currentLang}/about`}
               partiallyActive={new RegExp(/about/).test(currentPath)}
+              from="header"
             >
               {titles[currentLang].about}
             </InternalLink>

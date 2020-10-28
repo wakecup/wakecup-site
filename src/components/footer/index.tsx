@@ -23,12 +23,14 @@ const Footer: React.FC<Props> = ({ children, currentLang }) => {
         <InternalLink
           to={currentLang === 'en' ? '/' : `/${currentLang}`}
           partiallyActive={currentPath === '/pt/'}
+          from="footer"
         >
           {titles[currentLang].home}
         </InternalLink>
         <InternalLink
           to={currentLang === 'en' ? '/about' : `/${currentLang}/about`}
           partiallyActive={new RegExp(/about/).test(currentPath)}
+          from="footer"
         >
           {titles[currentLang].about}
         </InternalLink>

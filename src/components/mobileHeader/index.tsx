@@ -49,6 +49,7 @@ const MobileHeader = ({ languages }: Props): JSX.Element => {
               <InternalLink
                 to={currentLang === 'en' ? '/' : `/${currentLang}`}
                 partiallyActive={currentPath === '/pt/'}
+                from="mobile-menu"
               >
                 {titles[currentLang].home}
               </InternalLink>
@@ -57,6 +58,7 @@ const MobileHeader = ({ languages }: Props): JSX.Element => {
               <InternalLink
                 to={currentLang === 'en' ? '/about' : `/${currentLang}/about`}
                 partiallyActive={new RegExp(/about$/).test(currentPath)}
+                from="mobile-menu"
               >
                 {titles[currentLang].about}
               </InternalLink>

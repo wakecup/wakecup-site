@@ -1,6 +1,6 @@
 module.exports = {
   pathPrefix: `/`,
-  url: `https://wakecup.netlify.app/`,
+  url: `https://wakecupdigital.com/`,
   title: `Wake cup! Digital Marketing`,
   titleTemplate: `%s — Wake cup! Digital Marketing`,
   description: `Consultoria de marketing digital e criação de aplicativos e sites.`,
@@ -19,5 +19,5 @@ module.exports = {
 
   // Google & Twitter
   googleAnalyticsId: `UA-180689554-1`, // Google Analytics ID
-  twitter: `@bielmaia`, // Twitter username
+  twitter: `@_bielmaia`, // Twitter username
 };
