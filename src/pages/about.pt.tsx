@@ -48,8 +48,8 @@ const i18n: i18nAboutProps = {
         'Somos um time - trabalhando com propósito.\nCrescendo juntos.\nTemos orgulho de respoeitar a integração da vida ao trabalho.',
     },
     {
-      key: 'proposal',
-      title: 'Objetivo',
+      key: 'purpose',
+      title: 'Propósito',
       description:
         'Clientes - não são apenas clientes,\nsão parte da nossa equipe.\nSomos seus maiores fãs.',
     },
