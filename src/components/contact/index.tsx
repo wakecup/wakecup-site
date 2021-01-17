@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { Form } from '@unform/web';
+import axios from 'axios';
 
 import Input, { Textarea } from '../input';
 
@@ -45,18 +46,18 @@ const texts = {
 const Contact: React.FC<Props> = ({ place, lang }) => {
   const encode = (data: Record<string, string>) => {
     return Object.keys(data)
-      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+      .map(key => `${key}=${data[key]}`)
       .join('&');
   };
 
   const handleSubmit = useCallback(
     (data: ContactProps) => {
-      return fetch('/', {
+      return axios('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({
+        data: encode({
           'form-name': `contact-${place}`,
-          name: data.nome,
+          nome: data.nome,
           email: data.email,
           company: data.company,
           site: data.site,
@@ -64,7 +65,7 @@ const Contact: React.FC<Props> = ({ place, lang }) => {
           'bot-field': data['bot-field'],
         }),
       })
-        .then(() => alert('Success!'))
+        .then(() => alert('Success! Thank you for contact us'))
         .catch(err => alert(err));
     },
     [place]
@@ -78,6 +79,7 @@ const Contact: React.FC<Props> = ({ place, lang }) => {
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         name={`contact-${place}`}
+        method="POST"
       >
         <Input name="bot-field" placeholder={texts[lang].titleField} isBotField type="hidden" />
         <Input name="nome" placeholder={texts[lang].name} />
