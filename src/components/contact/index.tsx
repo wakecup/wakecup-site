@@ -71,7 +71,7 @@ const Contact: React.FC<Props> = ({ place, lang }) => {
   );
 
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
       <strong>{texts[lang].title}</strong>
       <Form
         onSubmit={handleSubmit}
