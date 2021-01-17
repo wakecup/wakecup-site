@@ -85,6 +85,7 @@ export const Textarea: React.FC<TextAreaProps> = ({ name, ...rest }) => {
     <Container isFocused={isFocused} isFilled={isFilled}>
       <textarea
         defaultValue={defaultValue}
+        name={fieldName}
         ref={inputRef}
         {...rest}
         onFocus={handleInputFocus}
