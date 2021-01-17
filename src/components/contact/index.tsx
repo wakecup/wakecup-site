@@ -65,7 +65,7 @@ const Contact: React.FC<Props> = ({ place, lang }) => {
           'bot-field': data['bot-field'],
         }),
       })
-        .then(() => alert('Success! Thank you for contact us'))
+        .then(() => alert('Success! Thank you for contacting us'))
         .catch(err => alert(err));
     },
     [place]

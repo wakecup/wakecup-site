@@ -47,6 +47,7 @@ const Input: React.FC<InputProps> = ({ name, isBotField = false, ...rest }) => {
     <Container isFocused={isFocused} isFilled={isFilled} isBotField={isBotField}>
       <input
         defaultValue={defaultValue}
+        name={fieldName}
         ref={inputRef}
         {...rest}
         onFocus={handleInputFocus}
