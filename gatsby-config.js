@@ -68,6 +68,12 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-WXKL5L4',
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: website.googleAnalyticsId,
