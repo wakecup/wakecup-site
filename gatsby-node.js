@@ -3,7 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-const path = require('path');
+const path = require('path'); // eslint-disable-line @typescript-eslint/no-var-requires
 
 /**
  * Enable absolute imports with `/src` as root.

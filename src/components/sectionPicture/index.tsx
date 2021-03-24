@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 import { SectionContent } from './styles';
@@ -7,15 +8,16 @@ interface Props {
   title: string;
   description: string;
   isMirror?: boolean;
-  image: JSX.Element | null;
+  image: IGatsbyImageData;
+  alt: string;
 }
 
-const SectionPicture = ({ title, description, isMirror = false, image }: Props): JSX.Element => {
+const SectionPicture: React.FC<Props> = ({ title, description, isMirror = false, image, alt }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <SectionContent isOdd={isMirror} expand={open}>
-      {image}
+      <GatsbyImage image={image} alt={alt} />
       <div className="infoWrapper">
         <h4>
           <button type="button" onClick={() => setOpen(state => !state)}>

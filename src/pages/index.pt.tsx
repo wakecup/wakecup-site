@@ -1,4 +1,5 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
+import { graphql, PageProps } from 'gatsby';
 
 import Home from '../components/pages/Home';
 
@@ -27,4 +28,35 @@ const i18n: i18nProps = {
   serviceDescription6: `SUA MARCA PRECISA DE BUZZ?\n\nNossa equipe tem as habilidades para se comunicar de forma eficiente com o público, tanto por meio de táticas digitais atraentes quanto de relações públicas tradicionais. Relacionamento com a mídia, influenciadores online e blogueiros aumentam a visibilidade ao apresentar sua marca em grandes sites de mídia social, blogs e publicações locais e nacionais, mantendo sua marca no centro das atenções.`,
 };
 
-export default (): ReactElement => <Home i18n={i18n} />;
+export const IndexPtQuery = graphql`
+  fragment imageFormat on File {
+    childImageSharp {
+      gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+    }
+  }
+
+  query HomeQuery {
+    image1: file(relativePath: { eq: "social-media.jpg" }) {
+      ...imageFormat
+    }
+    image2: file(relativePath: { eq: "website-development.jpg" }) {
+      ...imageFormat
+    }
+    image3: file(relativePath: { eq: "digital-marketing.jpg" }) {
+      ...imageFormat
+    }
+    image4: file(relativePath: { eq: "seo-content.jpg" }) {
+      ...imageFormat
+    }
+    image5: file(relativePath: { eq: "email-marketing.jpg" }) {
+      ...imageFormat
+    }
+    image6: file(relativePath: { eq: "public-relations.jpg" }) {
+      ...imageFormat
+    }
+  }
+`;
+
+const HomePt: React.FC<PageProps<HomeData>> = ({ data }) => <Home i18n={i18n} data={data} />;
+
+export default HomePt;

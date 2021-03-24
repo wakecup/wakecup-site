@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+// import { StaticQuery, graphql } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+
 import root from 'window-or-global';
 
 import { InternalLink } from '../link';
@@ -25,26 +26,26 @@ interface Props {
 const Header = ({ langs, currentLang }: Props): JSX.Element => {
   const [currentPath, setcurrentPath] = useState('/');
 
-  const Image = () => (
-    <StaticQuery
-      query={graphql`
-        query {
-          file(relativePath: { eq: "logo.png" }) {
-            childImageSharp {
-              fluid(maxWidth: 254, maxHeight: 80) {
-                ...GatsbyImageSharpFluid_tracedSVG
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <div>
-          <Img fluid={data.file.childImageSharp.fluid} />
-        </div>
-      )}
-    />
-  );
+  // const Image = () => (
+  //   <StaticQuery
+  //     query={graphql`
+  //       query {
+  //         file(relativePath: { eq: "logo.png" }) {
+  //           childImageSharp {
+  //             fluid(maxWidth: 254, maxHeight: 80) {
+  //               ...GatsbyImageSharpFluid_tracedSVG
+  //             }
+  //           }
+  //         }
+  //       }
+  //     `}
+  //     render={data => (
+  //       <div>
+  //         <Img fluid={data.file.childImageSharp.fluid} />
+  //       </div>
+  //     )}
+  //   />
+  // );
 
   const selectLanguage = () => {
     const links = langs.map(lang => (
@@ -69,7 +70,9 @@ const Header = ({ langs, currentLang }: Props): JSX.Element => {
   return (
     <HeaderContainer>
       <div className="container">
-        <div className="imageContainer">{Image()}</div>
+        <div className="imageContainer">
+          <StaticImage src="../../assets/images/logo.png" alt="Wakecup Digital Marketing Logo" />
+        </div>
         <div className="linkContainer">
           <div className="internalLinkContainer">
             <InternalLink
