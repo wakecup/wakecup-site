@@ -1,13 +1,13 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import LayoutWrapper from '../../layoutWrapper';
 import { SEO } from '../../SEO';
 import Slider from '../../slider';
 import SectionPicture from '../../sectionPicture';
-import Contact from '../../contact';
 
 // Assets
-import { HomeWrapper } from './styles';
+import { ContactSection, HomeWrapper } from './styles';
 
 interface i18nProps extends Record<string, string> {
   lang: 'pt' | 'en';
@@ -75,7 +75,10 @@ const IndexPage: React.FC<IndexProps> = ({ data, i18n }) => (
         />
       </div>
     </HomeWrapper>
-    <Contact place="home" lang={i18n.lang} />
+    <ContactSection>
+      <strong>Want to level up your business? Send us a message!</strong>
+      <Link to={i18n.lang === 'en' ? '/contact' : `/${i18n.lang}/contact`}>Contact</Link>
+    </ContactSection>
   </LayoutWrapper>
 );
 

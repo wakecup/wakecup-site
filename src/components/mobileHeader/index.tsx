@@ -63,6 +63,15 @@ const MobileHeader = ({ languages }: Props): JSX.Element => {
                 {titles[currentLang].about}
               </InternalLink>
             </li>
+            <li className="menu-item">
+              <InternalLink
+                to={currentLang === 'en' ? '/contact' : `/${currentLang}/contact`}
+                partiallyActive={new RegExp(/contact$/).test(currentPath)}
+                from="mobile-menu"
+              >
+                {titles[currentLang].contact}
+              </InternalLink>
+            </li>
             <li className="menu-item">{languages}</li>
           </ul>
         </nav>

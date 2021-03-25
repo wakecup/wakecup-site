@@ -211,3 +211,32 @@ export const HomeWrapper = styled.div`
     width: 256px;
   }
 `;
+
+export const ContactSection = styled.section`
+  flex: 1;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  margin-top: 20px;
+
+  @media ${devices.mobile} {
+    font-size: 1rem;
+  }
+
+  a {
+    padding: 10px 20px;
+    margin: 20px 0 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    border: 0.5px solid ${theme.colors.primary.dark};
+    border-radius: 4px;
+    color: ${theme.colors.pageBackground};
+    background: ${theme.colors.primary.lighter};
+
+    @media ${devices.mobile} {
+      font-size: 0.8rem;
+    }
+  }
+`;

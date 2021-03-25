@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import Value from '../../value';
-import Contact from '../../contact';
 import LayoutWrapper from '../../layoutWrapper';
 import { SEO } from '../../SEO';
 import TeamMember from '../../teamMember';
 
 import { AboutContainer, SectionContainer, ValuesContainer } from './styles';
+import { ContactSection } from '../Home/styles';
 
 interface Props {
   i18n: i18nAboutProps;
@@ -56,7 +57,10 @@ const About: React.FC<Props> = ({ i18n }) => (
         </span>
       </ValuesContainer>
 
-      <Contact place="about" lang={i18n.lang} />
+      <ContactSection>
+        <strong>Want to level up your business? Send us a message!</strong>
+        <Link to={i18n.lang === 'en' ? '/contact' : `/${i18n.lang}/contact`}>Contact</Link>
+      </ContactSection>
     </AboutContainer>
   </LayoutWrapper>
 );
